@@ -414,19 +414,18 @@ public class VideoConverseActivity extends ConverseActivity implements OnClickLi
             remotelayout.setVisibility(View.VISIBLE);
         }
         // 默认一开始使用前摄像头 0：后摄像头,1:前摄像头      选择预览摄像头   TODO
-        if (UCSCall.getCameraNum() > 1) {
-            Log.i("zyp", "使用前置摄像头");
-            UCSCall.switchCameraDevice(1, RotateType.DEFAULT);
-            Log.i("zyp", "使用后置摄像头 end");
-        } else {
-            Log.i("zyp", "使用后置摄像头");
-            UCSCall.switchCameraDevice(0, RotateType.DEFAULT);
-            Log.i("zyp", "使用后置摄像头 end");
-        }
+//        if (UCSCall.getCameraNum() > 1) {
+//            Log.i("zyp", "使用前置摄像头");
+//            UCSCall.switchCameraDevice(1, RotateType.DEFAULT);
+//            Log.i("zyp", "使用后置摄像头 end");
+//        } else {
+        Log.i("zyp", "使用后置摄像头");
+        UCSCall.switchCameraDevice(0, RotateType.DEFAULT);
+        Log.i("zyp", "使用后置摄像头 end");
+//        }
         //设置本地的预览旋转角度     TODO
-//        UCSCall.setVideoSendRotation(180);
-        //设置本地预览旋转角度
-//        UCSCall.setLocalPreviewRotation(90);
+        UCSCall.setVideoSendRotation(180);
+        UCSCall.setLocalPreviewRotation(90);
         // 通话接通前按钮不可用
         converse_call_mute.setClickable(false);
         converse_call_video.setClickable(false);

@@ -61,7 +61,7 @@
                 android:padding="5dp"
                 yzx:normal_icon="@drawable/bottom_message"
                 yzx:select_icon="@drawable/bottom_message_down"
-                yzx:text="消息3"
+                yzx:text="消息4"
                 yzx:text_normal_color="#ff797979"
                 yzx:text_select_color="#ff46ac5e"
                 yzx:text_size="12sp" />
