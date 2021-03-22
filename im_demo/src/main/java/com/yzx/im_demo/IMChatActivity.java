@@ -56,7 +56,7 @@ public class IMChatActivity extends FragmentActivity implements
     private ImageView iv_direct;
     private ArrayList<Long> clickDirect = new ArrayList<Long>();
     private static boolean isDirect = false;
-    private String[] actionTitle = new String[]{"消息", "通讯录", "设置"};
+    private String[] actionTitle = new String[]{"消息2", "通讯录2", "设置"};
     //	private IMManager imManager;
     private MainBottomBar bottomMsg, bottomContact, bottomSetting;
 

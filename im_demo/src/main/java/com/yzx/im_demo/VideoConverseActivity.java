@@ -26,6 +26,8 @@ import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gl.softphone.VideoDecParam;
+import com.gl.softphone.VideoEncParam;
 import com.yzx.api.RotateType;
 import com.yzx.api.UCSCall;
 import com.yzx.api.UCSCameraType;
@@ -345,13 +347,20 @@ public class VideoConverseActivity extends ConverseActivity implements OnClickLi
         Log.i("zyp", "initCameraConfig初始化视频SDK start");
         UCSCall.initCameraConfig(VideoConverseActivity.this, remotelayout, locallayout);
         Log.i("zyp", "initCameraConfig初始化视频SDK end");
-
+        testJinyin();
         // 将参数设置到SDK
+
+
 //        VideoDecParam decParam = new VideoDecParam();
 //        decParam.ucmaxFramerate = 12; // 帧率
 //        VideoEncParam encParam = new VideoEncParam();
-//        encParam.usWidth = 360; // 宽
-//        encParam.usHeight = 480; // 高
+//
+//
+////        encParam.usWidth = 360; // 宽
+////        encParam.usHeight = 480; // 高
+//        //面板机预览参数
+//        encParam.usWidth = 480; // 宽
+//        encParam.usHeight = 640; // 高
 //        encParam.usStartBitrate = 120; // 开始码率
 //        encParam.usMaxBitrate = 150; // 最大码率
 //        encParam.usMinBitrate = 90; // 最小码率
@@ -406,17 +415,19 @@ public class VideoConverseActivity extends ConverseActivity implements OnClickLi
             locallayout.setVisibility(View.VISIBLE);
             remotelayout.setVisibility(View.VISIBLE);
         }
-        // 默认一开始使用前摄像头 0：后摄像头,1:前摄像头
-        if (UCSCall.getCameraNum() > 1) {
-            Log.i("zyp", "使用前置摄像头");
-            UCSCall.switchCameraDevice(1, RotateType.DEFAULT);
-            Log.i("zyp", "使用后置摄像头 end");
-        } else {
-            Log.i("zyp", "使用后置摄像头");
-            UCSCall.switchCameraDevice(0, RotateType.DEFAULT);
-            Log.i("zyp", "使用后置摄像头 end");
-        }
-//        UCSCall.setVideoSendRotation(90);
+        // 默认一开始使用前摄像头 0：后摄像头,1:前摄像头      选择预览摄像头   TODO
+//        if (UCSCall.getCameraNum() > 1) {
+//            Log.i("zyp", "使用前置摄像头");
+//            UCSCall.switchCameraDevice(1, RotateType.DEFAULT);
+//            Log.i("zyp", "使用后置摄像头 end");
+//        } else {
+        Log.i("zyp", "使用后置摄像头");
+        UCSCall.switchCameraDevice(0, RotateType.DEFAULT);
+        Log.i("zyp", "使用后置摄像头 end");
+//        }
+        //设置本地的预览旋转角度     TODO
+//        UCSCall.setVideoSendRotation(180);
+        UCSCall.setLocalPreviewRotation(90);
         // 通话接通前按钮不可用
         converse_call_mute.setClickable(false);
         converse_call_video.setClickable(false);
@@ -774,6 +785,22 @@ public class VideoConverseActivity extends ConverseActivity implements OnClickLi
 
     ArrayList<Long> clickList = new ArrayList<Long>(); // 用于打开网络信息的连击动作时间列表
     boolean isOpenBr = true;
+
+    /**
+     * 静音设置只有在视频接通之后设置才有效
+     */
+    public void testJinyin() {
+        UCSCall.setMicMute(!UCSCall.isMicMute());
+        if (UCSCall.isMicMute()) {
+            Log.i("zyp", "设置为非静音");
+            converse_call_mute.setBackgroundResource(R.drawable.converse_mute);
+        } else {
+            Log.i("zyp", "设置为静音");
+            converse_call_mute.setBackgroundResource(R.drawable.converse_mute_down);
+        }
+
+    }
+
 
     @Override
     public void onClick(View v) {

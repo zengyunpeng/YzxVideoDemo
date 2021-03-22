@@ -3,7 +3,7 @@
     xmlns:yzx="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <com.yzx.mydefineview.YzxTopBar
         android:id="@+id/actionBar_chat"
@@ -15,25 +15,24 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" >
+        android:layout_weight="1">
 
         <FrameLayout
             android:id="@+id/id_frameLayout"
             android:layout_width="fill_parent"
-            android:layout_height="match_parent" >
-        </FrameLayout>
+            android:layout_height="match_parent"></FrameLayout>
 
         <ImageView
             android:id="@+id/iv_direct"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/direct" 
-            android:focusable="false"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="30dp"
-            android:visibility="gone"/>
+            android:background="@drawable/direct"
+            android:focusable="false"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <View
@@ -45,13 +44,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#f7f7f7"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <FrameLayout
             android:id="@+id/fl_left"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" >
+            android:layout_weight="1">
 
             <com.yzx.mydefineview.MainBottomBar
                 android:id="@+id/id_bottombar_msg"
@@ -62,7 +61,7 @@
                 android:padding="5dp"
                 yzx:normal_icon="@drawable/bottom_message"
                 yzx:select_icon="@drawable/bottom_message_down"
-                yzx:text="消息"
+                yzx:text="消息2"
                 yzx:text_normal_color="#ff797979"
                 yzx:text_select_color="#ff46ac5e"
                 yzx:text_size="12sp" />
@@ -71,8 +70,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:paddingRight="40dip"
-                android:paddingTop="4dip" >
+                android:paddingTop="4dip"
+                android:paddingRight="40dip">
 
                 <ImageView
                     android:id="@+id/conversations_cout_bg"
@@ -104,7 +103,7 @@
             android:padding="5dp"
             yzx:normal_icon="@drawable/bottom_contact"
             yzx:select_icon="@drawable/bottom_contact_down"
-            yzx:text="通讯录"
+            yzx:text="通讯录2"
             yzx:text_normal_color="#ff797979"
             yzx:text_select_color="#ff46ac5e"
             yzx:text_size="12sp" />
