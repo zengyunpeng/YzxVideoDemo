@@ -187,7 +187,7 @@ public class SettingFragment extends Fragment implements OnClickListener, Compou
                     e.printStackTrace();
                 }
                 tvVersion.setText("DEMO: v" + demoVersion + "\n"
-                        + "VOIP SDK: " + UCSService.getSDKVersion()+"\n"
+                        + "VOIP SDK: " + UCSService.getSDKVersion() + "\n"
                         + "IM SDK: " + IMManager.getInstance(getActivity()).getSDKVersion() + "\n"
                         + "TCP SDK: v3.0.6.4\n"
                         + "UGo: " + UGoManager.getInstance().pub_UGoGetVersion());
@@ -213,6 +213,9 @@ public class SettingFragment extends Fragment implements OnClickListener, Compou
             updateRateSeekBar();
         }
     }
+
+
+    //开启720P 手机端把最小码率设置为308 最大码率设置为630     设备端最低码率311,最高码率610  通话比较流畅,基本无延时画面清晰度也还可以
 
     //码率滑动条监听器
     private class SeekBarListener implements OnSeekBarChangeListener {
